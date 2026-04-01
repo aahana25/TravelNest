@@ -1,0 +1,234 @@
+/* ===== Google Font ===== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+/* ===== Reset ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* ===== Caramel Background ===== */
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #4b2e2b, #8b5e3c, #d2a679);
+}
+
+/* ===== Main Card Container ===== */
+.container {
+    width: 1100px;
+    height: 650px;
+    display: flex;
+    border-radius: 25px;
+    overflow: hidden;
+    background: #f4ede6;
+    box-shadow:
+        0 40px 100px rgba(0, 0, 0, 0.35),
+        0 0 50px rgba(210, 166, 121, 0.4);
+}
+
+/* ===== Left Image Section ===== */
+
+.left-section {
+    flex: 1;
+    background-image: url("img/l_m.jpeg");
+    background-size: cover;
+    /* Makes image fill completely */
+    background-position: left;
+    /* Keeps it centered */
+    background-repeat: no-repeat;
+    border-radius: 25px 0 0 25px;
+    /* Match container radius */
+    position: relative;
+}
+
+
+
+/* Overlay Content */
+.overlay-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    z-index: 2;
+}
+
+/* Optional dark overlay for better text visibility */
+.left-section::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
+/* Text Styling */
+.overlay-content h1 {
+    font-size: 75px;
+    margin-bottom: 10px;
+}
+
+.overlay-content p {
+    font-size: 20px;
+    font-style: italic;
+}
+
+
+
+
+
+
+
+/* ===== Right Form Section ===== */
+.right-section {
+    flex: 1;
+    background: #f4ede6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px;
+}
+
+.form-box {
+    width: 100%;
+    max-width: 420px;
+}
+
+/* ===== Heading ===== */
+.form-box h2 {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 600;
+    color: #3e2c23;
+    margin-top: -4px;
+    margin-bottom: 30px;
+}
+
+
+
+/* ===== Input Fields ===== */
+.input-group {
+    position: relative;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.input-group i {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    color: gray;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px 40px;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+}
+
+
+
+/* ===== Sign Up Button ===== */
+.btn-login {
+
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(to right, #1e90ff, #00c6ff);
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+
+.btn-login:hover {
+    opacity: 0.9;
+}
+
+
+
+
+
+/* ===== Footer Link ===== */
+.login-link {
+
+    text-align: center;
+    margin: 10px 0 5px 0;
+    font-size: 14px;
+    color: #6b4c3b;
+    margin-bottom: 20px;
+
+}
+
+.login-link a {
+
+    text-decoration: none;
+    color: #c47a2c;
+    font-weight: 500;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.login-link a:hover {
+    text-decoration: none;
+}
+
+.back-home {
+    display: inline-block;
+    margin-top: 0px;
+    font-size: 14px;
+    color: #a15c1c;
+    text-decoration: none;
+    position: relative;
+    transition: all 0.35s ease;
+}
+
+.back-home:hover {
+    transform: scale(1.1);
+    color: #c47a2c;
+}
+
+/* Underline animation */
+.back-home::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    left: 0;
+    bottom: -4px;
+    background-color: #c47a2c;
+    transition: width 0.35s ease;
+}
+
+.back-home:hover::after {
+    width: 100%;
+}
+
+
+/* ===== Responsive ===== */
+@media (max-width: 950px) {
+    .container {
+        flex-direction: column;
+        height: auto;
+        width: 90%;
+    }
+
+    .left-section {
+        height: 250px;
+    }
+
+    .right-section {
+        padding: 40px 25px;
+    }
+}

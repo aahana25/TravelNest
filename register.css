@@ -1,0 +1,252 @@
+/* ===== Google Font ===== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+/* ===== Reset ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* ===== Caramel Background ===== */
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #4b2e2b, #8b5e3c, #d2a679);
+}
+
+/* ===== Main Card Container ===== */
+.container {
+    width: 1100px;
+    height: 650px;
+    display: flex;
+    border-radius: 25px;
+    overflow: hidden;
+    background: #f4ede6;
+    box-shadow:
+        0 40px 100px rgba(0, 0, 0, 0.35),
+        0 0 50px rgba(210, 166, 121, 0.4);
+}
+
+/* ===== Left Image Section ===== */
+.left-section {
+    flex: 1;
+    background-image: url("img/hotel-sunset.jpg");
+    background-size: cover;
+    /* Makes image fill completely */
+    background-position: left;
+    /* Keeps it centered */
+    background-repeat: no-repeat;
+    border-radius: 25px 0 0 25px;
+    /* Match container radius */
+    position: relative;
+}
+
+
+/* Optional dark overlay for better contrast */
+.left-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top right, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.1));
+}
+
+/* ===== Right Form Section ===== */
+.right-section {
+    flex: 1;
+    background: #f4ede6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px;
+}
+
+.form-box {
+    width: 100%;
+    max-width: 420px;
+}
+
+/* ===== Heading ===== */
+.form-box h2 {
+    text-align: center;
+    font-size: 32px;
+    font-weight: 600;
+    color: #3e2c23;
+    margin-top: 40px;
+    margin-bottom: 10px;
+}
+
+.form-box p {
+    text-align: center;
+    font-size: 15px;
+    color: #7a5c4d;
+    margin-bottom: 30px;
+}
+
+/* ===== Input Fields ===== */
+.input-group {
+    margin-bottom: 18px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 14px 15px;
+    border-radius: 12px;
+    border: 1px solid #e0d5c6;
+    background: #fff;
+    font-size: 14px;
+    transition: 0.3s ease;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: #c68b59;
+    box-shadow: 0 0 0 3px rgba(198, 139, 89, 0.2);
+}
+
+/* ===== Checkbox ===== */
+.terms {
+    display: flex;
+    align-items: center;
+    font-size: 13px;
+    margin-bottom: 20px;
+    color: #6b4c3b;
+}
+
+.terms input {
+    margin-right: 8px;
+}
+
+/* ===== Sign Up Button ===== */
+.btn {
+
+    width: 100%;
+    padding: 15px;
+    border-radius: 14px;
+    border: none;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    background: linear-gradient(135deg, #d89b4c, #c47a2c);
+    color: #fff;
+    transition: 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(196, 122, 44, 0.4);
+}
+
+/* ===== Divider ===== */
+.divider {
+    text-align: center;
+    margin: 25px 0;
+    font-size: 13px;
+    color: #a18676;
+    position: relative;
+}
+
+.divider::before,
+.divider::after {
+    content: "";
+    height: 1px;
+    width: 40%;
+    background: #e0d5c6;
+    position: absolute;
+    top: 50%;
+}
+
+.divider::before {
+    left: 0;
+}
+
+.divider::after {
+    right: 0;
+}
+
+/* ===== Social Buttons ===== */
+.social-btn {
+    width: 100%;
+    padding: 13px;
+    border-radius: 12px;
+    border: 1px solid #e0d5c6;
+    background: #ffffff;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.social-btn:hover {
+    background: #f9f5f1;
+}
+
+/* ===== Footer Link ===== */
+.login-link {
+    text-align: center;
+    margin: 10px 0 5px 0;
+    font-size: 14px;
+    color: #6b4c3b;
+}
+
+.login-link a {
+    text-decoration: none;
+    color: #c47a2c;
+    font-weight: 500;
+}
+
+.login-link a:hover {
+    text-decoration: none;
+}
+
+.back-home {
+    display: inline-block;
+    margin-top: 0px;
+    font-size: 14px;
+    color: #a15c1c;
+    text-decoration: none;
+    position: relative;
+    transition: all 0.35s ease;
+}
+
+.back-home:hover {
+    transform: scale(1.1);
+    color: #c47a2c;
+}
+
+/* Underline animation */
+.back-home::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    left: 0;
+    bottom: -4px;
+    background-color: #c47a2c;
+    transition: width 0.35s ease;
+}
+
+.back-home:hover::after {
+    width: 100%;
+}
+
+
+/* ===== Responsive ===== */
+@media (max-width: 950px) {
+    .container {
+        flex-direction: column;
+        height: auto;
+        width: 90%;
+    }
+
+    .left-section {
+        height: 250px;
+    }
+
+    .right-section {
+        padding: 40px 25px;
+    }
+}

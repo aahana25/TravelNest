@@ -1,0 +1,210 @@
+/* ===== Google Font ===== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+/* ===== Reset ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* ===== Body ===== */
+body {
+    background: linear-gradient(135deg, #4b2e2b, #8b5e3c, #d2a679);
+    min-height: 100vh;
+}
+
+/* ===== Main Container ===== */
+.container {
+    display: flex;
+    width: 1100px;
+    max-width: 95%;
+    height: 650px;
+    margin: auto;
+    margin-top: 40px;
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 0 40px 100px rgba(0,0,0,0.35), 0 0 50px rgba(210,166,121,0.4);
+    background: #f4ede6;
+}
+
+/* ===== Left Slideshow Section ===== */
+.left-section {
+    width: 50%;
+    position: relative;
+    overflow: hidden;
+}
+
+.slideshow {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    animation: fade 12s infinite;
+}
+
+.slide1 { background: url("img/l1.jpeg") no-repeat center/cover; animation-delay: 0s; }
+.slide2 { background: url("img/l2.jpeg") no-repeat center/cover; animation-delay: 4s; }
+.slide3 { background: url("img/l3.jpeg") no-repeat center/cover; animation-delay: 8s; }
+
+@keyframes fade {
+    0% { opacity: 0; }
+    8% { opacity: 1; }
+    33% { opacity: 1; }
+    41% { opacity: 0; }
+    100% { opacity: 0; }
+}
+
+.left-section::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.4);
+    z-index: 1;
+}
+
+.overlay-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    z-index: 2;
+}
+
+.overlay-content h1 { font-size: 50px; margin-bottom: 10px; }
+.overlay-content p { font-size: 18px; font-style: italic; }
+
+/* ===== Right Form Section ===== */
+.right-section {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px;
+}
+
+.form-box {
+    width: 100%;
+    max-width: 420px;
+}
+
+/* Heading */
+.form-box h2 {
+    text-align: center;
+    font-size: 28px;
+    font-weight: 600;
+    color: #3e2c23;
+    margin-bottom: 25px;
+}
+
+/* Input Fields */
+.input-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.input-group i {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    color: gray;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px 40px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    outline: none;
+    font-size: 14px;
+}
+
+.input-group input:focus {
+    border-color: #c47a2c;
+}
+
+/* Login Button */
+.btn-login {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(to right, #1e90ff, #00c6ff);
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    transition: opacity 0.3s;
+}
+
+.btn-login:hover {
+    opacity: 0.9;
+}
+
+/* Links */
+.login-link {
+    text-align: center;
+    font-size: 14px;
+}
+
+.login-link a {
+    text-decoration: none;
+    color: #c47a2c;
+    font-weight: 500;
+}
+
+.login-link a:hover {
+    color: #a15c1c;
+}
+
+/* Back Home */
+.back-home {
+    display: inline-block;
+    margin-top: 5px;
+    position: relative;
+    transition: all 0.35s ease;
+}
+
+.back-home::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    left: 0;
+    bottom: -2px;
+    background-color: #c47a2c;
+    transition: width 0.35s ease;
+}
+
+.back-home:hover::after {
+    width: 100%;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 950px) {
+    .container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .left-section {
+        height: 250px;
+        border-radius: 25px 25px 0 0;
+    }
+
+    .right-section {
+        padding: 40px 25px;
+    }
+}
